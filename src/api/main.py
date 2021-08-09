@@ -1,10 +1,7 @@
 from typing import Coroutine
 
-from dotenv import load_dotenv
 from fastapi import FastAPI, Request, Response
 from fastapi.staticfiles import StaticFiles
-
-load_dotenv()
 
 from .routing import router
 from .utils import Redis
@@ -21,6 +18,11 @@ redis = Redis()
 async def on_startup() -> None:
     """Initialize the database and redis connections."""
     await redis.ainit()
+
+
+@app.get("/")
+async def test():
+    return {"message": "something"}
 
 
 @app.middleware("http")
