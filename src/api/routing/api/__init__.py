@@ -1,3 +1,4 @@
+from __future__ import annotations
 from time import time
 
 from fastapi import APIRouter, Request, Response
