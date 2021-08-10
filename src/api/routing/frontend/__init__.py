@@ -13,4 +13,4 @@ async def get_login(request: Request):
 
 @router.post("/login/")
 async def post_login(request: Request, username: str = Form(...)):
-    pass
+    return {"username": username}

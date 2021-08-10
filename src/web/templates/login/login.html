@@ -1,6 +1,8 @@
+{% extends "_base.html" %}
 {% block content %}
-<form action="/login">
+<form action="/login" method="post">
     <label for="username">Username:</label>
     <input type="text" id="username" name="username">
+    <input type="submit" value="Submit">
 </form>
 {% endblock content %}
